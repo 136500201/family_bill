@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="development">
+        <!-- 配置数据库连接信息 -->
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/bill_dev" />
+                <property name="username" value="admin" />
+                <property name="password" value="admin" />
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 注册Mapper xml文件 -->
+    <!--<mappers>
+        <mapper resource="ExpenditureDao.xml" />
+    </mappers>-->
+
+    <mappers>
+        <!--<mapper resource="com/yujian/model/StudentMapper.xml"/>
+        <mapper resource="com/yujian/model/ClassInfoMapper.xml"/>-->
+        <!--设置反射来源-->
+        <!--或者用下面这种，可以自动查询包下所有文件-->
+        <!--<package name="com.fam"></package>-->
+
+        <mapper resource="mapper/ExpenditureDao.xml"/>
+        <!--<mapper class="com.yujian.model.StudentMapper"></mapper>这种也可以-->
+    </mappers>
+</configuration>

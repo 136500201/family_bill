@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fam.dao.ExpenditureDao">
+
+    <!--查询某某某-->
+    <select id="selectById" resultType="com.fam.model.Expenditure" parameterType="java.lang.String">
+        select * from Expenditure;
+    </select>
+</mapper>

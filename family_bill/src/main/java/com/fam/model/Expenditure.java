@@ -10,7 +10,52 @@ public class Expenditure {
     private String fund;
     private String fixed;
     private String addi;
+    private String inves;
+    private String fixedDeta;
+    private String addiDeta;
+    private String repayDate;
 
+    public String getFixedDeta() {
+        return fixedDeta;
+    }
+
+    public void setFixedDeta(String fixedDeta) {
+        this.fixedDeta = fixedDeta;
+    }
+
+    public String getAddiDeta() {
+        return addiDeta;
+    }
+
+    public void setAddiDeta(String addiDeta) {
+        this.addiDeta = addiDeta;
+    }
+
+    public String getRepayDate() {
+        return repayDate;
+    }
+
+    public void setRepayDate(String repayDate) {
+        this.repayDate = repayDate;
+    }
+
+    public String getTotalPro() {
+        return totalPro;
+    }
+
+    public void setTotalPro(String totalPro) {
+        this.totalPro = totalPro;
+    }
+
+    private String totalPro;
+
+    public String getInves() {
+        return inves;
+    }
+
+    public void setInves(String inves) {
+        this.inves = inves;
+    }
 
     public String getAvaFun() {
         return avaFun;
@@ -60,34 +105,5 @@ public class Expenditure {
         this.addi = addi;
     }
 
-    @Override
-    public String toString() {
-        return "Expenditure{" +
-                "avaFun='" + avaFun + '\'' +
-                ", dateCur='" + dateCur + '\'' +
-                ", totalArrears='" + totalArrears + '\'' +
-                ", fund='" + fund + '\'' +
-                ", fixed='" + fixed + '\'' +
-                ", addi='" + addi + '\'' +
-                '}';
-    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Expenditure that = (Expenditure) o;
-        return Objects.equals(avaFun, that.avaFun) &&
-                Objects.equals(dateCur, that.dateCur) &&
-                Objects.equals(totalArrears, that.totalArrears) &&
-                Objects.equals(fund, that.fund) &&
-                Objects.equals(fixed, that.fixed) &&
-                Objects.equals(addi, that.addi);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(avaFun, dateCur, totalArrears, fund, fixed, addi);
-    }
 }

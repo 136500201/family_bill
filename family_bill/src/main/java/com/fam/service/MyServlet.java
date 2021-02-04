@@ -25,25 +25,22 @@ public class MyServlet extends HttpServlet {
         SqlSessionFactory sqlSessionFactory = MybatisHelper.getSqlSessionFactory();
         SqlSession sqlSession = sqlSessionFactory.openSession();
         Expenditure expenditure = null;
+        //查询数据库
         try {
             ExpenditureDao mapper = sqlSession.getMapper(ExpenditureDao.class);
             expenditure = mapper.selectById(1);
-            System.out.println("请求成功");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             sqlSession.close();
         }
-        PrintWriter out = response.getWriter();
-        Map map = new HashMap();
-        map.put("ceshi1","1111");
-        map.put("ceshi2","2222");
-        map.put("ceshi3","3333");
-        String json = JSON.toJSONString(map);
-        //out.write(json);
-        //request.setAttribute("expenditure",expenditure);
-        HttpSession session = request.getSession();
-        request.setAttribute("addi",expenditure.getAddi());
+        //传值给前端
+        request.setAttribute("expenditure",expenditure);
         request.getRequestDispatcher("/billCal.jsp").forward(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp){
+
     }
 }
